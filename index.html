@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+ integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+ crossorigin=""/>
+ <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" type="text/css" href="sito.css">
+ <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+ integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+ crossorigin=""></script>
+<script type="text/javascript" src="json_data.json"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<html>
+<head>
+<title>Il carcere in Italia</title>
+</head>
+
+<body>
+    <section id="sezione_intro">
+       
+        <div id = "dheader">
+            <div id="contieni_logo"><img id="icona_intro" src="img/police-handcuffs.png" width="250" height="250"></div>
+            <div id="titolo">
+            <h1 style="text-align:left">Il carcere in Italia: indagine su un fallimento sistemico</h1>
+            <h2 style="text-align: left">Un progetto di Data Journalism</h2>
+            </div>
+
+        </div>
+        
+        <div id="contieni_icona">
+            <a href="#contenuto" class="grow">
+            <i id="icona1" class="fa fa-angle-double-down"></i>
+            </a>
+        </div>
+    </section>
+    <section id="contenuto">
+    <div class="strisciata_left" ></div>
+    <div class="center">
+        <div id = "Introduzione" class = "sezione_interna">
+            <h2 class = "titoletti">Un primo sguardo al problema.</h2>
+            <p class ="testi"> Ci sono in Italia al 30 giungo 2022 <span class = "ev">54.841 </span>persone detenute all’interno delle carceri italiane. Circa un italiano ogni mille. Quasi quanto gli abitanti di tutta Siena.
+                <br><br>
+                Ma cosa vuol dire vivere dietro le sbarre? Che profilo ha il carcerato medio?
+                L’immaginario collettivo sulla vita in carcere è vasto e spesso influenzato da film, serie tv, documentari true crime che falsano notevolmente la realtà e talvolta conferiscono a questo luogo di reclusione un fascino o un orrore inverosimili. Di carcere “vero” si parla poco e spesso lo si fa solo in relazione ad eventi eclatanti come evasioni, suicidi, omicidi compiuti dai detenuti in permesso premio: casi isolati di una normalità completamente differente. <br><br>
+                Per capire dunque il divario tra percezione diffusa e realtà dei fatti abbiamo sottoposto ad un campione di <span class = "bold">300 utenti </span>un test che sondasse la loro consapevolezza sul tema per poi confrontare i dati ottenuti con quelli ricavati dall’Ufficio statistico del Dipartimento dell’Amministrazione Penitenziaria (<span class = "bold">Ministero della Giustizia</span>). Nello specifico abbiamo ritenuto interessante analizzare la composizione della popolazione carceraria ed il problema del sovraffollamento, riflettendo infine sui problemi legati alla funzione rieducativa che il carcere dovrebbe assolvere.<br><br>
+                La carta costituzionale sancisce che le pene devono tendere alla rieducazione del condannato (ex art.27 comma 3), per favorirne la reintegrazione nella società. La pena nella maggior parte dei casi non è infinita e i detenuti, una volta espiata, tornano ad essere individui liberi. Da qui sorge la domanda che ha guidato la nostra indagine, tratta dal libro di Marcello Bortolato ed Edoardo Vigna <span class = "corsivo">"Vendetta pubblica"</span>: <br><br> <span class ="corsivo">"Cos’è che vuole, allora, il cittadino? Vuole che una persona quando esce dal carcere sia peggiore o migliore di come è entrata?". </span>               
+            </p>
+        </div>
+        <div id = "Profilo" class = "sezione_interna">
+            <h2 class = "titoletti">Una panoramica sulla popolazione carceraria</h2>
+            <p class="testi"> Vediamo adesso i numeri che caratterizzano la popolazione carceraria italiana, mettendoli a confronto con i dati raccolti attraverso il nostro sondaggio.
+            </p>
+            <div class="sondaggio"> <div class="sondaggio_titolo"><i class="fa fa-check-square-o" aria-hidden="true"></i><p>Risultati sondaggio</p></div>
+            <h3>Qual è secondo te la percentuale di donne tra i carcerati?</h3>
+            <p>
+            Più della metà delle persone hanno risposto il 25%. 
+        </p></div>
+            <p class="testi"> 
+                In Italia solo il <span class="ev">4%</span> delle persone recluse sono donne. A livello nazionale le donne sono invece il 51,3% della popolazione totale. Questo dimostra una <span class="bold">enorme differenza di genere</span> all’interno delle carceri italiane, composte per il restante 96% da uomini.
+Esistono solo quattro istituti esclusivamente femminili, gli altri sono strutture divise al loro interno in sezione maschile e sezione femminile.
+ 
+            </p>
+            <div id ="donna"><div id="contieni_icone_donne"></div></div>
+            <p class = "didascalie"> 1 donna su 25 carcerati </p>  
+            <p class="testi"> 
+            </p>
+            <div class="sondaggio">
+                <div class="sondaggio_titolo"><i class="fa fa-check-square-o" aria-hidden="true"></i><p>Risultati sondaggio</p></div>
+                <h3>Ci sono più stranieri o italiani nelle carceri?</h3>
+                <p>
+                Il 38% delle persone crede che ci siano più stranieri che italiani.  
+            </p></div>
+            <div id ="stranieri">
+                <p class="testi">I detenuti stranieri nelle carceri italiane sono il <span class="ev">31%</span> del totale dei detenuti. Dobbiamo tenere di conto che gli stranieri residenti in Italia costituiscono il 10% della popolazione italiana (al 1° gennaio 2021), ma che le due percentuali non possono essere facilmente confrontate, considerando che i dati sui detenuti includono sia gli immigrati regolari che quelli irregolari.
+
+
+                </p>
+                <div id = "pie_stranieri" class = "grafico"> </div>
+                <p class = "didascalie">Percentuale di stranieri e italiani tra i carcerati</p>
+
+                <p class="testi"> Il gruppo etnico più popoloso (19,5%) è quello dei marocchini e anche i numero di albanesi risulta alto (10,8%). Questi dati non sorprendono considerando che queste nazionalità sono le due più presenti sul territorio italiano insieme ai rumeni. 
+                </p>
+                <div id = "bubble_stranieri" class = "grafico"> </div>
+                <p class = "didascalie">Principali luoghi di provenienza dei detenuti stranieri nel carcere italiano.<br>Fonte: Ministero della Giustizia</p> 
+            </div>
+            <div id ="crimini">
+                <div class="sondaggio">
+                    <div class="sondaggio_titolo"><i class="fa fa-check-square-o" aria-hidden="true"></i><p>Risultati sondaggio</p></div>
+                    <h3>La maggior parte dei detenuti è dentro per reati contro il patrimonio o reati contro la persona?</h3>
+                    <p>
+                    Più della metà delle persone hanno risposto con "reati contro la persona". 
+                </p></div> 
+                <p class="testi">A differenza di quanto riportato dal sondaggio, i <span class="ev">reati contro il patrimonio</span> (furto, rapina, estorsione, usura, truffa) superano notevolmente quelli contro la persona (delitti contro la vita e l’incolumità individuale, contro la maternità, contro l’onore, contro la libertà individuale).
+                </p>
+                <div id = "bar_crimini" class = "grafico"> </div>
+                <p class = "didascaliecrimini">Tipi di crimine compiuti dai detenuti in Italia.<br>Fonte: Ministero della Giustizia</p>   
+            </div>
+        </div>
+        <div id = "Sovraffollamento" class = "sezione_interna">
+            <h2 class = "titoletti">Il problema del sovraffollamento</h2>
+            <div id="numeroni_svrf">
+                    <div id="num1" class="contieni_num">
+                        <p>Capienza regolamentare</p>
+                        <span class="numerone">50.900</span>
+                    </div>
+                    <div id="num2" class="contieni_num">
+                        <p>Capienza effettiva</p>
+                        <span class="numerone">54.841</span>
+                    </div>
+                    <div id ="num3" class="contieni_num">
+                    <p>Tasso di sovraffollamento</p>
+                    <span class="numerone">107.7%</span>
+                    </div>
+
+            </div>
+            <p class="testi"> L’8 gennaio 2013 la Corte europea dei diritti dell’uomo condanna all’unanimità l’Italia per la violazione dell’<span class = "bold">articolo 3 della Cedu</span>, secondo il quale nessuno può essere sottoposto a tortura né a pene o trattamenti inumani e degradanti. Secondo la corte di Strasburgo <span class = "ev">3 mq/detenuto</span> è il confine fra detenzione umana e disumana, limite difficilmente garantito nelle nostre carceri a causa del sovraffollamento che spesso le caratterizza. 
+            </p>
+            <div id ="Serie_detenuti">
+                <div id = "line_detenuti" class = "grafico"> </div>
+                <p class = "didascalie">Serie storica - Numero totale di detenuti in carcere dal 1992 al 2021.<br>Fonte: Ministero della Giustizia</p>    
+            </div>
+            <p class="testi"> Come vediamo dal grafico, dagli anni ’90 in poi si registra un progressivo aumento del numero di detenuti eccezion fatta per due vertiginosi cali nel 2006 e nel 2013.  <br>
+                Il primo è la conseguenza dell’<span class="bold">indulto per i reati meno gravi</span>, approvato con la legge 241/2006 che ha generato un calo repentino del 34,5% ma che, essendo una soluzione emergenziale e non organica, ha avuto un effetto molto limitato nel tempo.<br> 
+                Il secondo picco negativo è invece conseguenza della già citata <span class="bold">sentenza Torreggiani</span>, che ha portato il parlamento ad approvare un decreto legge emergenziale (144/2013) per ridurre il sovraffollamento.<br><br>
+                L’ultimo consistente calo della popolazione detenuta (oltre 6.000 persone) lo si riscontra durante l’<span class="bold">emergenza di Covid-19</span>. <br>
+                Alla vigilia della pandemia in Italia erano recluse 62 mila persone (eccedendo di circa 10.000 unità la capienza regolamentare) che durante l’emergenza sanitaria sono scese a 54.134 (per una capienza regolamentare di 50.551). Molti detenuti sono stati quindi costretti a continuare a vivere in celle sovraffollate quando al di fuori delle carceri s’imponeva il distanziamento sociale come prima arma difensiva contro il contagio. <br>
+                La diminuzione di detenuti durante la pandemia è dovuta a una <span class="bold">maggior concessione di misure domiciliari</span>, ma anche ai <span class="bold">mancati ingressi</span> dovuti al lockdown che, costringendo tutti a casa, ha significato meno furti, meno spaccio, meno arresti. <br>
+                Secondo i dati raccolti da Ristretti orizzonti, che sta conducendo un’azione di monitoraggio dei decessi all’interno delle carceri, <span class="bold">21 detenuti hanno perso la vita a causa del virus nel 2020 e 2021</span>.
+                      
+            </p>
+            <div id ="Mappa" class = "grafico">
+            <div id = "map" > </div><div id="legenda_mappa"></div>
+            </div>
+            <p class="testi"> Dobbiamo ovviamente tener presente che, come si evince dalla mappa, le condizioni variano molto da istituto a istituto: ci sono centri detentivi in cui il sovraffollamento è molto marcato e altri in cui la popolazione rientra nei limiti prestabilititi. 
+                Il livello di affollamento della struttura condiziona fortemente la qualità della vita carceraria poiché, come afferma il docente di Diritto Costituzionale <span class = "bold">Marco Ruotolo</span>, è logisticamente impossibile che in strutture sovraffollate la dignità del detenuto venga tutelata.
+                <br><br><span class="corsivo">“In presenza di esso [sovraffollamento N.d.R.] è difficile pensare che il detenuto possa sviluppare la sua personalità in carcere, in una situazione che è già, di per sé, fortemente “spersonalizzante” per effetto della rottura delle sfere di autogestione del proprio corpo, del proprio tempo e della propria psiche[..]”. </span>
+                <br>(Marco Ruotolo, Dignità e carcere, p.31)
+                
+                <br><br>Per comprendere meglio in che modo il sovraffollamento può riflettersi sulla vita dei detenuti, riportiamo alcune delle più critiche conseguenze dell’inadeguatezza delle strutture (tratte da rilevazioni dirette dell’osservatorio <a class = "link" href = "https://www.antigone.it/"> Antigone </a> su un campione di 96 istituti, rapporto VIII-2021):
+            </p>
+            <div class="contieni_punti">
+                <div class="punto"><div class="contieni_img"><img src="img/firewall.png" width="30" height="30"></div>	Nel <span class="ev">25%</span> delle celle non sono garantiti 3 mq calpestabili per detenuto</div>
+                <div class="punto"><div class="contieni_img"><img src="img/shower.png" width="30" height="30"></div>	Nel <span class="ev">56%</span> delle celle non vi è la doccia</div>
+                <div class="punto"><div class="contieni_img"><img src="img/wc.png" width="30" height="30"></div>Nel <span class="ev">5%</span> delle celle il wc non è in un ambiente separato, ma in un angolo della cella</div>
+            </div>
+            <div class = "contieni_punti" id="contieni_punti2">
+                <div class="punto"><div class="contieni_img"><img src="img/book.png" width="30" height="30"></div>	Nell’<span class="ev">8%</span> degli istituti non ci sono spazi dedicati esclusivamente alla formazione</div>
+                <div class="punto"><div class="contieni_img"><img src="img/chat.png" width="30" height="30"></div>	Nel <span class="ev">17%</span> degli istituti non ci sono spazi per la socialità</div>
+                <div class="punto"><div class="contieni_img"><img src="img/football.png" width="30" height="30"></div>	Nel <span class="ev">36,4%</span> dei casi non è previsto un accesso settimanale ad un campo sportivo</div>
+                <div class="punto"><div class="contieni_img"><img src="img/pray.png" width="30" height="30"></div>	Nel <span class="ev">79,5%</span> degli istituti non c’è uno spazio ad hoc per i detenuti di culto non cattolico</div>
+            </div>
+            <p>
+                <br>Se, riappellandoci ai precetti costituzionali, la pena deve tendere alla <span class = "bold">rieducazione del condannato</span>, è allora necessario che essa promuova innanzi tutto le condizioni che favoriscano il benessere psico-fisico individuale, senza il quale non ci può essere autodeterminazione. Dai dati appena riportati invece traspare chiaramente che la vita in carcere non sempre garantisce questa possibilità.
+            
+                <br><br><span class="corsivo">“Se e quando la condizione di sovraffollamento sarà scongiurata [..], dovrebbe ritenersi rimosso il principale alibi finora addotto per giustificare la mancata attuazione dei suddetti precetti costituzionali”</span>
+                <br>(Marco Ruotolo, Dignità e carcere, p.31)   
+            </p>
+            <div id ="educatori">
+                <div id = "stackbar" class = "grafico"> </div>
+                <p class = "didascalie"></p>   
+            </div>
+        </div>
+        <div id = "Educazione" class = "sezione_interna">
+            <h2 class = "titoletti">Cosa offre il carcere per favorire il reinserimento sociale?</h2>
+            <p class="testi"> Il carcere ha la funzione di punire attraverso la sospensione della libertà di movimento i soggetti giudicati potenzialmente pericolosi, ma non dovrebbe intaccare gli altri diritti fondamentali (salute, istruzione, affettività, integrità fisica etc.). Dilaga invece l’idea che il carcere sia semplicemente il luogo fisico dove i detenuti scontano l’effettiva pena, che consisterebbe, in un’ottica vendicativa, nel sottoporre il condannato ad un quotidiano trattamento disumano e degradante. <br><br>
+                Quest’ultima concezione della pena viene detta <span class = "ev">retributiva </span>e consiste nel retribuire il male inflitto con il male subito, entro la logica dell’occhio per occhio. Sebbene questo approccio sia caldeggiato da parte dell’opinione pubblica, non è compatibile con il nostro ordinamento democratico.<br>
+                Esiste un’altra grande funzione della pena che è la <span class = "ev">deterrenza</span>, ovvero cercare di dissuadere i cittadini dal compiere reato attraverso la minaccia di una sorte da scongiurare. <br><br>
+                La Corte costituzionale, con la sentenza 149 del 2018 ha affermato per la prima volta il principio della non sacrificabilità della funzione <span class = "ev">rieducativa</span> sull’altare di ogni altra funzione della pena. 
+                Nonostante questi precetti siano molto chiari, all’occhio di un osservatore esterno non è facile comprendere quale sia l’effettivo obbiettivo del nostro sistema carcerario o se sia fallimentare o meno.                 
+            </p>
+            <h3 class = "sottoparagrafi">I due principali strumenti del trattamento rieducativo: studio e lavoro</h3>
+            <p>Nessuno può essere obbligato a svolgere nessun tipo di attività, la coercizione è vietata dalle convenzioni internazionali in quanto violazione di diritti individuali. Se un detenuto decide si stare in cella a dormire ogni giorno della sua detenzione è libero di farlo. Ci sono però varie possibilità all’interno delle carceri che permettono ai detenuti di occupare il loro tempo e inserirsi in un percorso formativo. Come affermano <span class = "bold">Marcello Bortolato</span> ed <span class = "bold">Edoardo Vigna</span>, queste attività tendono a <span class = "corsivo">contrastare il tentativo del carcere, come istituzione totale, di passivizzare il suo paziente, neutralizzarlo, renderlo incapace [..] e favorire una modificazione significativa nei comportamenti e una revisione critica del reato.</span> Il fine ultimo è ovviamente il reinserimento sociale.</p>
+            <h3 class = "sottoparagrafi">L'istruzione</h3>
+            <p>La scuola è uno dei pilastri del trattamento penitenziario. Questa opportunità permette ai detenuti di avviare un percorso didattico che li guidi verso il conseguimento di titoli di studio quali licenza elementare, media, diploma di maturità, laurea. Come affermano i detenuti del collettivo del carcere di Padova Ristretti orizzonti <span class = "corsivo">“portare la scuola in carcere equivale a portare la cultura dove ha regnato, spesso indisturbata, l’ignoranza. La maggior parte dei detenuti infatti non porta con se un bagaglio culturale accettabile, ma ha avuto la sola scuola della strada, della delinquenza”</span>.<br><br>
+                In carcere il livello di scolarizzazione medio appare molto più basso rispetto alla media nazionale: secondo i dati ISTAT al 2020 in Italia la percentuale di popolazione che ha conseguito una laurea è pari al <span class = "ev">20%</span> contro il <span class = "ev">2%</span> dei detenuti (dati DAP al 31 dicembre 2021). <br><br>
+                Come possiamo osservare dalla tabella sottostante, il numero di coloro che nel 2021 hanno conseguito una laurea in carcere è pari allo <span class="ev">0,02%</span> della popolazione detenuta. Sono stati registrati nello stesso anno <span class="ev">576</span> detenuti iscritti ai corsi universitari, il <span class="ev">47,3%</span> dei quali a indirizzi <span class="bold">politico-sociali e giuridici</span>. Questo dato risulta interessante se consideriamo che nell’anno accademico 2020-2021 il MIUR registra che solo il <span class="ev">16%</span> degli studenti universitari risulta iscritto agli indirizzi giuridico (8%) e politico-sociale (8%). <br>
+Sebbene non siano presenti studi che analizzino i motivi di questa predilezione da parte della popolazione carceraria, è possibile ipotizzare che ci sia un collegamento tra la condizione di reclusione e la volontà di comprendere i meccanismi politico-giuridici della società.
+
+                </p>
+                <div id ="Universita" >
+                    <div id = "donugt" class = "grafico">    
+                    <style>
+                        table { width: 50px; background-color: #FFFCF2; color: #000000; border-color: #CCCCCC; border-collapse: collapse; margin: 0 auto;}
+                        th, td { width: 25px; padding: 5px 10px; }
+                        td {text-align: center; }
+                        </style>
+                        <table border="1" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                        <td class = "titoligrassetti">Gruppo disciplinare</td>
+                        <td class = "titoligrassetti">Numero Laureati</td>
+                        </tr>
+                        <tr>
+                        <td>Agrario</td>
+                        <td>2</td>
+                        </tr>
+                        <tr>
+                        <td>Economico<br>Statistico</td>
+                        <td>2</td>
+                        </tr>
+                        <tr>
+                        <td>Giuridico</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>Letterario</td>
+                        <td>3</td>
+                        </tr>
+                        <tr>
+                        <td>Linguistico</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>Politico<br>Sociale</td>
+                        <td>6</td>
+                        </tr>
+                        <tr>
+                        <td>Totale</td>
+                        <td>15</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <p id = "didascalia_istruzione">Numero di Laureati in carcere e numero di iscritti nelle facoltà universitarie durante la reclusione nel 2021.<br>Fonte: Ministero della Giustizia</p>
+                </div>
+                <p>
+                Il <span class = "ev">24%</span> dei ristretti è invece <span class = "bold">privo di titolo di studio o fermo alla licenza elementare</span>, dato che si abbassa su scala nazionale, ove un 15,9% della popolazione over 15 presenta queste caratteristiche. <br><br>
+                Il <span class = "ev">58% </span>della popolazione carceraria risulta in possesso della <span class = "bold">licenza media inferiore </span>a fronte del 32,2% nazionale di over 15 che si sono fermati a questo livello di istruzione. 
+                </p>
+            <div id ="Titolo di studio">
+                <div id = "titolo_studio" class = "grafico"> </div>
+                <p id = "didascalia_istruzione">Livello di istruzione dei detenuti in carcere nel 2021.<br>Fonte: Ministero della Giustizia</p>    
+            </div>
+            <div class="inizio_intervista">
+                <hr size="2" width="45%" color="black">  
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                <hr size="2" width="45%" color="black"> 
+            </div>
+            <h3 class = "sottoparagrafi">Per comprendere meglio il funzionamento e la gestione della scuola in carcere abbiamo intervistato Claudio Pedron, docente di alfabetizzazione nel carcere Sollicciano di Firenze. (intervista integrale <a href="IntervistaA.html">qui</a>)</h3>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Da quanto tempo insegna ai detenuti?</h4>
+            <p class="testi"> Questo è il mio 30esimo anno di insegnamento nelle carceri. 
+                Nel 1992 ho ottenuto il ruolo di supplente annuale di alfabetizzazione a Volterra, carcere di massima sicurezza: 100 detenuti con pene superiori a 15 anni (spaccio, mafia). [..]
+                L’impatto è stato pesante.<br><br>
+                Gli insegnanti che mi avevano preceduto non insegnavano ma facevano varie attività, tra cui il teatro. Io avevo 1.30h la mattina e 1.30h il pomeriggio, <span class = "bold">orario inadeguato e insufficiente per portare avanti un percorso di istruzione con i detenuti</span>, per questo trent’anni fa ho iniziato a combattere per avere un orario continuativo che si confacesse alle esigenze dell’insegnamento in quel contesto.<br><br>
+                Non c’era grande interesse a questo tema, la Preside della scuola da cui dipendevo non era mai entrata in carcere e non aveva idea di cosa significasse insegnarci. Le <span class = "bold">attrezzature scolastiche erano completamente inadeguate</span>, i banchi erano del 1930, la classe era una cella adibita ad aula. 
+                In 4 anni, io ed una collega, riusciamo a dare un senso alla scuola e a <span class = "bold">creare le attività collaterali all’insegnamento che secondo me sono il fulcro dell’istruzione</span>.
+            </p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Quali sono ad oggi i limiti dell’attività scolastica nelle carceri?</h4>
+            <p class="testi"> Uno dei problemi principali è che si prende una scuola esterna e si impianta il suo servizio all’interno, seguendo <span class = "bold">l’idea che i professori non devono avere un approccio diverso con i detenuti, ma semplicemente insegnare loro ciò che insegnano fuori.</span> Per me questa mancanza di formazione specialistica è un grave errore perché <span class = "bold">questa idea che la materia sia più importante della persona che hai di fronte non la condivido tanto.</span> Devi tenere conto di chi hai davanti, delle loro esigenze, dei fallimenti che hanno affrontato, del fatto che stanno gran parte del tempo in celle in cui è una disgrazia vivere. <br><br>
+                Io poi, come vi dicevo, mi sono battuto per aumentare l’orario scolastico, garantendo l’orario completo per tutti dalle 8.30 alle 12.30 che prima non era previsto. Questo perché più tempo stanno a scuola, meno tempo stanno in sezione o negli altri spazi. In più ci sono progetti pomeridiani in collaborazione con altre associazioni.<br>
+                <span class = "bold">Quando vediamo che qualcuno si avvicina alla logica del riempire il tempo in maniera differente, cerchiamo di tenerlo occupato sempre più tempo, dandogli sempre più stimoli e cose di cui parlare.</span>
+            </p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Quanto incide secondo lei la formazione scolastica sul reinserimento sociale del detenuto?</h4>
+            <p>Mi colpì particolarmente un episodio: un agente una volta mi disse parlando dei detenuti allievi <span class = "corsivo">“tu Claudio li difendi ma non sai che sono delle bestie in sezione”</span> e poco dopo un detenuto mi disse <span class = "corsivo">“tu Claudio parli con loro tranquillamente ma loro in sezione sono delle canaglie”</span>. <span class = "bold">Perciò il contesto della scuola modifica gli atteggiamenti.</span><br><br>
+                Sta a noi riuscire a trattenerli a scuola, però la fatica la fanno sempre loro. Soprattutto quando ad un bassissimo livello di istruzione si sovrappone, per gli allievi stranieri, un limite linguistico.<br>
+                Non esistono statistiche che prendono in considerazione sia il livello di formazione con cui una persona entra in carcere che la frequenza ai corsi scolastici, per poi confrontarli con la sua condotta una volta espiata la condanna. <span class = "bold">È difficile tenere traccia di chi esce e misurare l’utilità dell’istruzione nel reinserimento.</span> 
+                </p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Il carcere in Italia è fallimentare?</h4>
+            <p>Se avessi la forza io farei una campagna per togliere il carcere al Ministero della giustizia. La costituzione è chiara, dopo 74 anni di fallimenti, siamo ancora in questo stato? <span class = "ev">Il carcere in Italia è un disastro</span>. L’unica cosa che fa è togliere per un periodo le persone dalla società. Ma se il carcere non gli dà prospettiva, allora mettiamo la pena di morte, così le togliamo per sempre dalla società e eliminiamo il problema. [..]<br><br>
+                Ad esempio ho avuto un ragazzo originario del Magreb molto bravo che era iscritto alle superiori e diceva di voler continuare a studiare una volta fuori. Addirittura, in una delle uscite organizzate da noi per favorire la reintegrazione sociale conosce delle persone che lavorano al museo dell’opera del Duomo che, rimanendo colpite dalla sua vivacità culturale e intelligenza, gli offrono un lavoro.
+                Una volta uscito, dopo 4 anni di carcere, non riesce ad iscriversi a scuola e non può essere assunto perché non ha il permesso di soggiorno. <span class = "bold">Dopo vari tentativi e un po’ di lavori in nero torna a spacciare per vivere.</span>  <br><br>
+                Ma questo vale anche per gli italiani, non è solo una questione di permesso di soggiorno.
+                Io sono diventato un mezzo esperto di droga e traffici internazionali, saprei dove comprarla e dove venderla perché alcuni di loro spesso parlano di queste cose qua, che coincidono con la loro sfera di competenza. Quindi anche chi non ne sa molto apprende e una volta fuori ha queste conoscenze in più. <span class = "bold">La scuola deve competere con questo substrato culturale che si crea nelle carceri</span> e che favorisce la recidiva, anche se poi ci sono tanti altri fattori: <span class = "bold">l’istruzione, l’ascolto che forniamo è importante, ma non basta.</span>
+                </p>
+            <div class="inizio_intervista">
+                    <hr size="2" width="45%" color="black"> 
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <hr size="2" width="45%" color="black"> 
+            </div>
+            <h3 class = "sottoparagrafi">Il lavoro</h3>
+            <p>Un altro modo di impiegare utilmente il tempo durante la detenzione è lavorare o imparare un mestiere. I carcerati tendono a preferire questo trattamento rieducativo perché permette loro di guadagnare (cifre molto esigue nei lavori interni) e perché è un impegno indispensabile per accedere alla graduale concessione di benefici. Lo scopo è dimostrare al detenuto che lavorando ha la possibilità di guadagnarsi da vivere in maniera legale.<br><br>
+                Ci sono diversi tipi di mestieri ai quali è possibile accedere in maniera più o meno selettiva, in base a svariati criteri. 
+                Una prima divisione può essere fatta tra lavori <span class="bold">interni</span> ed <span class="bold">esterni</span>, i primi sono ad esempio quelli domestici (portavitto, scopino, lavapiatti, cuoco) e le attività legate alla manutenzione ordinaria fabbricati (elettricista, idraulico, muratore). C’è poi il lavoro che il detenuto può svolgere per conto dell’amministrazione penitenziaria sia all’interno che all’esterno delle mura carcerarie (sartoria, informatica, assemblaggio biciclette, pasticceria e molto altro ancora). In questo caso la retribuzione è piena perché il lavoro diventa a tutti gli effetti identico a quello svolto dai cittadini liberi, all’interno di un contratto tra datore e dipendente.<br><br>
+                Ci sono poi due benefici carcerari che si basano sull’esercitare un’attività lavorativa all’esterno: <span class="ev">l’Articolo 21 e 48 dell’ordinamento penitenziario</span>, che permettono di andare a lavorare all’esterno alle dipendenze di un datore privato o pubblico (es. per il comune). I controlli sono ovviamente rigidi e se non vengono rispettate le condizioni scatta la revoca, che impedisce di usufruire per tre anni di qualsiasi beneficio.<br><br>
+                
+                Nonostante l’ordinamento penitenziario delinei valide modalità di reinserimento lavorativo, <span class="bold">solo un terzo della popolazione carceraria italiana ha accesso a questa opportunità</span>.
+                </p>
+            <div id ="Lavoro">
+                <div id = "stack" class = "grafico"> </div>
+                <p class = "didascalie" id="didascalia_lavoro">Serie storica - Detenuti lavorani all'amministrazione del carcere e detenuti lavoranti non all'amministrazione del carcere dal 1992 al 2021.<br>Fonte: Ministero della Giustizia</p> 
+            </div>
+            <div class="inizio_intervista">
+                <hr size="2" width="45%" color="black"> 
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                <hr size="2" width="45%" color="black"> 
+        </div>
+            <h3 class = "sottoparagrafi"  id="intro_st">Per approfondire il tema del lavoro in carcere abbiamo intervistato Stefano, il quale durante la sua detenzione ha avuto modo di lavorare sia all’interno che all’esterno della struttura detentiva, fino a beneficiare dell’lavoro esterno (ex art.21 o.p.)e della semilibertà (ex art.48 o.p.). Grazie a queste possibilità oggi è mastro birraio e progetta di aprire un risto-pub una volta espiata la sua condanna. (Intervista integrale <a href="IntervistaB.html">qui</a>)</h3><br><br>
+            <p>Intanto grazie per avermi preso in considerazione, trovo che sia molto importante comunicare riguardo a quello che è realmente il carcere.<br>
+                Io mi chiamo Stefano e sono stato condannato per omicidio a trent’anni di carcere. [..]<br><br>
+                Partiamo dal concetto che <span class="ev">a me il carcere ha salvato la vita</span>. Ero un dipendente da cocaina, avevo mille casini per la testa ed entrare in una struttura che per certi versi è materna, è accogliente – vi sembrerà assurdo quello che dico – ma ha tutte caratteristiche che sono negative se esasperate. Durante il mio periodo di carcerazione ho avuto modo di inquadrare i miei problemi, poco o tanto ho avuto la possibilità di avere un educatore, uno psicologo una volta al mese, ho avuto contatti con persone che mi hanno stimolato, contenuto, supportato. [..]<br>
+                <span class="bold">Ad oggi sono responsabile di produzione del birrificio Maltus Faber che fa birra artigianale a Genova</span>.
+                </p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Quindi tu hai ricevuto una formazione professionale in carcere?</h4>
+            <p>Io ho imparato un mestiere in carcere. Questo è fondamentale. Se vogliamo parlare di rieducazione, per usare un termine che a me non mi piace tanto, dobbiamo partire dalla consapevolezza che <span class="bold">la rieducazione non può prescindere dalla dignità dell’essere umano e non ci può essere dignità nell’essere umano se non c’è un ruolo sociale</span>. Il lavoro ti dà questo ruolo sociale. Voi state studiando per avere in futuro il vostro ruolo nella società. È ovvio che ad oggi sia un casino, è un problema per le persone incensurate trovar lavoro, quindi sicuramente formare e poi dare un lavoro ad un detenuto è complesso. <br><br>
+                Sta di fatto <span class="bold">che io sono l’esempio di quello che può fare il buon carcere, l’applicazione delle leggi</span>: noi abbiamo un ordinamento penitenziario molto valido in Italia, che viene studiato anche dall’estero. Dagli anni ’80 con la <span class="bold">legge Gozzini</span> è stata introdotta la possibilità di modulare la pena nel corso dell’esecuzione in modo da favorire il processo rieducativo e di reinserimento. Il problema nasce nella sua applicazione. Anzi in pochi casi viene applicata.</p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Sebbene la tua esperienza dimostri che il carcere può funzionare, noi stiamo (forse erroneamente) considerando il tuo percorso come un’eccezione. Complice il fatto che in questi giorni abbiamo trovato un dato che parla da solo, ovvero che il 70% dei detenuti torna a commettere reato. Secondo te perché? </h4>
+            <p>Il dato va contestualizzato. <span class="bold">C’è una recidiva molto alta, è vero, ma tra chi esce a fine pena, ovvero coloro che si fanno la carcerazione dal primo all’ultimo giorno senza nessun tipo di beneficio</span>.
+                Ci sono per esempio persone che stanno tutto il giorno buttate su una branda. Il mio percorso positivo dipende dal fatto che io ho scelto, e mi sono dato da fare. C’è anche chi dice <span class="corsive">“ma a me chi me lo fa fare? Io sto scontando la mia pena in carcere, perché dovrei lavorare o studiare?”</span> <span class="bold">In quest’ottica chi si fa la carcerazione dal primo all’ultimo giorno esce convinto di essere in credito con la società.</span> <br>Quindi molti di questi escono senza avere né arte né parte, a volte senza affetti, senza un lavoro, senza soldi. La prima cosa che spesso fanno i detenuti appena escono è un’infrazione: prendere l’autobus senza biglietto perché non hanno soldi per comprarlo.  <br><br>
+                
+                <span class="bold">Questo sistema così com’è non funziona</span>, il carcere in Italia è fallimentare nella media. Laddove invece si applicano le leggi – che ci sono – e si dà alle persone un’opportunità trattamentale completa, questo assolve la sua funzione. <br>
+                Io per esempio la prima volta che sono uscito sono stato fuori dodici ore. Dopo un altro mese altre dodici ore. Il mese dopo due giorni, in cui sono andato a Lastra a Signa a fare uno spettacolo. Era la prima volta che dormivo fuori dal carcere dopo tanti anni. Poi, dopo un po’ di tempo, ho ottenuto il primo permesso per andare a casa. Lentamente e gradualmente mi è stato concesso sempre un pochino di più, fino a quando è arrivato l’articolo 21.
+                </p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> L’articolo 21 permette di accedere alle misure alternative?</h4>
+            <p>Sì è il primo step dopo il permesso premio nelle misure alternative: dormi in carcere, hai orari molto serrati e nei giorni in cui non lavori devi tornare in carcere. Dopo di che c’è la semilibertà, che ti permette di stare fuori più di quanto il lavoro richieda e, infine, l’affidamento in prova al servizio sociale, che è l’ultima fase prima della libertà. Io ne ho ancora per un annetto e mezzo, devo stare a casa dalle 10.30 di sera fino alle 6 del mattino e in questo lasso di tempo posso fare tutto, rimanendo all’interno della città metropolitana di Genova. Io poi son davvero un fortunato, via premiale posso stare fuori una volta al mese fino alle una di notte.</p>
+            <h4 class = "domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Noi abbiamo parlato di rieducazione, ma all’inizio ci hai detto che questa parola non ti piace particolarmente. Perché?</h4>
+            <p>Non perché presuppongano che siamo dei mostri da rimanipolare, non lo considero un termine denigratorio nei confronti del detenuto. <span class="bold">Lo trovo un termine profondamente inadeguato per il concetto che l’istituzione pretende di dare alla parola rieducazione</span>. Non è l’istituzione che rieduca, ma <span class="ev">è l’individuo che sceglie di rieducarsi</span>. L’istituzione dovrebbe impegnarsi a dare gli strumenti di rieducazione, strumenti che siano utili a guardarsi dentro, a crescere. Non sono le imposizioni tout court che ti rieducano, anzi sono controproducenti, soprattutto se vieni costretto in determinati vincoli in maniera pressoché immotivata. <br><br>
+                È ovvio che è difficile soprattutto se si ha a che fare con adulti dai venti anni in su, che hanno sempre vissuto di espedienti, hanno sempre fatto casini e non hanno nulla da spendere nel mondo è molto difficile insegnare loro che si può vivere in maniera diversa. Però senza questo non si può fare altro. 
+                E non è la legge perché ripeto, è buona. <span class="bold">È l’approccio che si ha alla legge e alla sua applicazione.</span> 
+                </p>
+        </div>
+        <div class="inizio_intervista">
+            <hr size="2" width="45%" color="black"> 
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            <hr size="2" width="45%" color="black"> 
+    </div>
+        <div id = "Conclusioni" class = "sezione_interna">
+            <h2 class = "titoletti">Alcune osservazioni conclusive</h2>
+            <div class="sondaggio"><div class="sondaggio_titolo"><i class="fa fa-check-square-o" aria-hidden="true"></i><p>Risultati sondaggio</p></div>
+                <h3>Secondo te, il carcere dovrebbe assolvere una funzione rieducativa?</h3>
+                <p>
+                L'84% degli intervistati ha risposto Assolutamente sì. 
+            </p></div>
+            <p class="testi"> Dai dati e dalle testimonianze appena lette emerge quindi che il fallimento delle carceri italiane è sistemico e non legato ad alcuni casi isolati. Creare istituti che garantiscano <span class="bold">percorsi di recupero individualizzati e assistenza sanitaria</span>  è sicuramente complesso, ma non impossibile come dimostrano i modelli virtuosi di Bollate e Nisida. Se, come affermava Voltaire, <span class="bold">il grado di civiltà di un paese si misura osservando le sue carceri</span>, in Italia è necessario creare condizioni di vita più umane oltre che ridistribuire e formare il personale affinché comprenda l’importanza sociale di questa missione.<br>
+    
+</p>
+                <div class="sondaggio"><div class="sondaggio_titolo"><i class="fa fa-check-square-o" aria-hidden="true"></i><p>Risultati sondaggio</p></div>
+                <h3>Secondo te, il sistema penitenziario è:<br>• Disumano • Adeguato • Troppo indulgente • Troppo severo</h3>
+                <p>
+                Il 34% degli intervistati lo ha definito disumano. Il 28% lo ritiene adeguato. <br>Il 22% lo ritiene troppo severo e il restante 16% lo definisce troppo indulgente.
+            </p></div><p class="testi">
+                Come possiamo vedere dal sondaggio sopra riportato l’84% del campione ritiene che il carcere debba assolvere la funzione rieducativa, ma il 42% di esso considera il sistema carcerario adeguato o troppo indulgente. Questo dato, letto in combinazione con l’altro che dimostra una inclinazione garantista del campione, fa pensare che ci sia ancora troppa poca consapevolezza diffusa sul tema.
+                
+                Per approfondire l’argomento consigliamo di leggere i rapporti che l’associazione <span class="ev">Antigone</span> stila con cadenza annuale sulle condizioni del carcere in Italia e il notiziario del collettivo <span class="ev">Ristretti orizzonti</span>, gestito dai detenuti e le detenute del carcere di Padova.
+            </p>
+          
+        </div>
+        <div id="fonti" class="sezione_interna">
+            <h3 class = "sottoparagrafi">Fonti</h3>
+            <p>
+                Ruotolo, Marco. <span class="corsivo">Dignità e carcere</span>. Editoriale Scientifica, 2014.<br><br>
+                Bortolato, Marcello, e Edoardo Vigna. <span class="corsivo">Vendetta pubblica: Il carcere in Italia.</span> Gius.Laterza & Figli Spa, 2020.<br><br>
+                Italia in dati <a href=" https://italiaindati.com/carceri-in-italia/">«Le carceri italiane»</a>, 25 gennaio 2019. <br><br>
+                Openpolis. <a href="https://www.openpolis.it/la-condizione-nelle-carceri-dopo-lemergenza-covid/">«La condizione nelle carceri dopo l’emergenza Covid»</a>, 15 giugno 2022.<br><br>
+                Frosali, Maria Cristina. <a href="https://extremaratioassociazione.it/8507-2/">«Lo spazio come misura dell’umanità del carcere»</a>. <span class="corsivo">Extrema Ratio</span> (blog), 23 dicembre 2020. <br><br>
+                <a href=" https://www.giustizia.it/giustizia/it/mg_1_14.page">«Ministero della giustizia | Statistiche»</a>. Consultato 19 luglio 2022.<br><br>
+                <a href="http://www.ristretti.it/">«Ristretti Orizzonti. Sito di cultura e informazione dal carcere»</a>. Consultato 19 luglio 2022.<br><br>   
+                XVIII rapporto sulle condizioni di detenzione. <a href="https://www.rapportoantigone.it/diciottesimo-rapporto-sulle-condizioni-di-detenzione/">«Il carcere visto da dentro - XVIII rapporto sulle condizioni di detenzione a cura di Associazione Antigone»</a>. Consultato 19 luglio 2022.<br><br>
+                <a href="http://dati.ustat.miur.it/dataset/iscritti">«Iscritti - Open Data dell’istruzione superiore»</a>. Consultato 19 luglio 2022.
+
+            </p>
+
+        </div>
+    </div>
+    <div class="strisciata_right" >
+      
+    </div> 
+    </section>
+    <div id="footer">
+        <p id = footertesto>Un progetto di Data Journalism per l'Università di Pisa.<br> Laurea Magistrale in Informatica Umanistica.<br>Anno Accademico 21/22<br><br>Alessandro Arena<br> Alice Bergonzini <br> Caterina Frosali
+        </p>
+    </div>
+</body>
+<script type="text/javascript" src="dj.js"></script>
+</html>

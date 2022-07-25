@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+ integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+ crossorigin=""/>
+ <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" type="text/css" href="sito.css">
+ <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+ integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+ crossorigin=""></script>
+<script type="text/javascript" src="json_data.json"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:wght@900&display=swap" rel="stylesheet">
+<html>
+<head>
+<title>Il carcere in Italia</title>
+</head>
+
+<body>
+    <div class="nav_intervista">
+       
+            <div id="titolo_nav">
+            <h3 style="text-align:left"><a href="index.html">Il carcere in Italia: indagine su un fallimento sistemico</a></h1>
+            </div>
+
+        
+        
+        
+    </div>
+    <section id="contenuto">
+    <div class="strisciata_left" ></div>
+    <div class="center">
+       
+        <div id = "Introduzione" class = "sezione_interna">
+            <h2 class = "titoletti" >Intervista: Stefano, l'esempio del buon carcere</h2>
+            <p class="disclaimer">L'intervista è stata registrata e trascritta. Sono state apportate piccole modifiche nella forma approvate dall'intervistato.</p>
+            <p>
+                È un caldo venerdì sera di Luglio e stiamo attendendo che Stefano si colleghi su zoom per farsi intervistare da noi, nell’ottica di un progetto sulla condizione delle carceri italiane. Il suo contatto ci è arrivato per vie traverse e tutto ciò che sappiamo di lui è che è “un detenuto”, nient’altro. <br>
+                Appena si collega ci troviamo di fronte ad un uomo in forma e di bell’aspetto, che ci saluta con un simpatico accento genovese. Notiamo subito che è immerso in un ambiente accogliente e familiare che non può essere una cella o uno spazio comune del carcere. Non sembra un detenuto, penso io cercando in lui qualcosa che rientri nel mio stereotipo di carcerato. Forse ci hanno passato il contatto sbagliato, arrivo a dubitare. <br>
+                Ci presentiamo velocemente e spieghiamo l’idea alla base del nostro progetto, poi gli diamo la parola chiedendo di raccontarci chi è. 
+            <br><br>
+            <span class="corsivo">Intanto grazie per avermi preso in considerazione, trovo che sia molto importante comunicare riguardo a quello che è realmente il carcere.
+                Io mi chiamo Stefano e sono stato condannato per omicidio a trent’anni di carcere. <br>
+                In primo grado ero stato assolto per incapacità di intendere e di volere, ritenuto non pericoloso socialmente. Poi in appello mi hanno condannato.<br><br>
+                <span class="bold">Sono entrato in carcere in maniera definitiva l’8 maggio del 2003 e ci sono stato in maniera ininterrotta fino all’11 maggio del 2012, quando ho avuto il mio primo permesso premio per uscire 12 ore.</span> Poi di lì è stato tutto abbastanza in discesa; ho iniziato avere sempre più permessi che più o meno ogni mese mi consentivano di venire a casa a Genova. 
+Nel 2017 ho avuto la semilibertà e sono venuto a lavorare a Genova. Poi durante il Covid posso dire che la disgrazia mi ha favorito, perché per non farmi fare dentro fuori ho avuto una sorta di licenza straordinaria che mi ha permesso di rimanere a casa e dormire nel letto di casa mia ogni sera. <span class="bold">Sono assolutamente un fortunato.</span>
+<br>Ad oggi sono una persona normale. Sono in affidamento in prova ai servizi sociali e 
+ho un lavoro, vivo con una compagna che sa di me, i suoi figli sanno di me per filo e per segno. È stato bello e difficile allo stesso tempo raccontare loro chi sono.
+</span>
+                </p>
+
+            <h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Puoi raccontarci un po’ la tua esperienza in carcere?</h4>
+            <p><span class="corsivo">
+
+                         <span class="bold"> Partiamo dal concetto che a me il carcere ha salvato la vita.</span> Ero un dipendente da cocaina, avevo mille casini per la testa ed entrare in una struttura che per certi versi è materna, è accogliente – vi sembrerà assurdo quello che dico – ma ha tutte caratteristiche che sono negative se esasperate. <span class="bold">Quando però tu non sai da che parte sei girato, il carcere ti accoglie e ti inquadra.</span> Ti dice quando puoi andare a passeggiare all’aria, quando puoi uscire dalla cella, quando devi mangiare, quando puoi fare la doccia, quando puoi vedere i tuoi famigliari, devi chiedere autorizzazione per telefonare. Qualsiasi cosa passa attraverso degli inquadramenti, è un molosso gigantesco di regole. E ci sta, perché se voi ci pensate bene, uno entra in carcere per aver violato delle norme – più o meno in maniera grave – e la risposta dell’istituzione è: ti riempio di regole fino a stressarti la vita, fino a stancarti. Ovviamente in questo microcosmo non mancano le contraddizioni, perché se poi vuoi comprarti il quartino di vino, procurarti droga o farti di psicofarmaci trovi il modo di aggirare queste regole. <span class="bold">Il carcere è un po’ come una pentola a pressione: tutto è condensato e compresso: problemi, regole, controllo.</span><br>
+                Io sono sempre stato un uomo disciplinato, ho fatto per tanti anni nuoto a livello agonistico, quindi per me sono sempre state importanti le regole e questa attitudine mi ha aiutato in quegli anni ad adattarmi al regime carcerario. 
+            </span> </p>
+            <h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>In che modo pensi che il carcere ti abbia cambiato</h4>
+            <span class="corsivo">
+            <p>Il mio omicidio è successo in famiglia. 
+                Una notte ho litigato con mia madre e ho fatto un casino totale. Non ho giustificazioni, assolutamente. Me la sto portando avanti e sono seguito da psicologi che mi hanno aiutato un sacco. Ma la mia vita è cambiata completamente. Io a parte essere un tossicodipendente non ho mai avuto una mentalità criminale. Mia madre era preside di scuola media, mio padre medico, venivo da un contesto medio borghese, una famiglia normale. 
+            <br>
+                Durante il mio periodo di carcerazione ho avuto modo di inquadrare i miei problemi, poco o tanto ho avuto la possibilità di avere un educatore, uno psicologo una volta al mese, ho avuto contatti con persone che mi hanno stimolato, contenuto, supportato.
+
+            </p>
+        </span>
+            <h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>In che carcere/i hai dovuto scontare la pena?</h4><span class="corsivo">
+<p>
+            Durante il primo grado, dall’ottobre del ’99 al marzo 2001, sono stato nel carcere Marassi di Genova per poi tornarci due anni dopo, quando l’8 maggio 2003 mi hanno riarrestato. L’8 settembre sono stato condannato e trasferito a Salluzzo, in provincia di Cuneo. <br>
+            Questa è stata la mia fortuna. <span class="bold">Lì ho iniziato a vivere in maniera “normale” quello che dovrebbe essere il carcere: ho chiesto di fare qualcosa e sono stato inserito in un corso di addetto cucina di 2400 ore che durava due anni</span>, possibile perché a quei tempi i finanziamenti della regione Piemonte erano molto validi.  
+            <br><br>
+            Io ho sempre avuto la passione della cucina, nei due anni che sono stato fuori prima del definitivo mi ero anche aperto un ristorante.
+Dopo un po’ di tempo, in carcere si libera il posto da bibliotecario e io faccio richiesta. Ero ad un bivio.
+<br><br>
+In quegli anni stava anche crescendo il carcere di Bollate e avrei potuto chiedere il trasferimento, magari mettermi a studiare. <span class="bold">Il mio reato però non ero ben visto e trovare una situazione in cui ero accettato per me era importante</span>. A Salluzzo stavo bene. Un giorno mi consulto anche con la mia educatrice e di lì a poco mi sono ritrovato a fare il bibliotecario e a spingere il carrellino rosso con i libri piantati sopra, unico stereotipo vero che c’è sul carcere. 
+<br><br>
+Quando ero bibliotecario poi ci siamo inventati il giornalino e il telegiornale, che è stato l’unico esperimento al mondo di cronaca fatta da detenuti per i detenuti all’interno della struttura. 
+Purtroppo però la cosa si è dispersa. Un po’ perché non siamo stati in grado di proseguire, un po’ perché l’iniziativa in sé non era ben vista. Addirittura un assistente di polizia penitenziaria ci aiutava e come potete immaginare i colleghi volevano osteggiare questa cosa. Avevamo la telecamera, il computer, io facevo i montaggi audio e video, ogni giorno stampavamo un dvd e dalla sala regia veniva trasmesso. Questa cosa ha creato problemi e purtroppo è stata smantellata. 
+Nel frattempo la cooperativa sociale “Pausa caffè” che ha la torrefazione del caffè all’interno del carcere delle Vallette, apre a Salluzzo un birrificio artigianale. <span class="bold">Io sono 14 anni che faccio birra e sono stato il primo assunto dalla cooperativa</span>. Per anni sono stato il secondo del Mastro birraio fino a che la cooperativa mi ha chiesto di diventare responsabile di produzione del birrificio, con un ausilio di personale esterno. Ho avuto così la possibilità di uscire nel 2016 in articolo 21 per cui facevo 3 giorni il birraio dentro e per tre giorni andavo a Grugliasco (To) a spillare birre e servire ai tavoli in una pizzeria pub, rientrando alle 2 di notte a Salluzzo. 
+<br><br>
+Quando ero bibliotecario poi ci siamo inventati il giornalino e il telegiornale, che è stato l’unico esperimento al mondo di cronaca fatta da detenuti per i detenuti all’interno della struttura. 
+Purtroppo però la cosa si è dispersa. Un po’ perché non siamo stati in grado di proseguire, un po’ perché l’iniziativa in sé non era ben vista. Addirittura un assistente di polizia penitenziaria ci aiutava e come potete immaginare i colleghi volevano osteggiare questa cosa. Avevamo la telecamera, il computer, io facevo i montaggi audio e video, ogni giorno stampavamo un dvd e dalla sala regia veniva trasmesso. Questa cosa ha creato problemi e purtroppo è stata smantellata. 
+Nel frattempo la cooperativa sociale “Pausa caffè” che ha la torrefazione del caffè all’interno del carcere delle Vallette, apre a Salluzzo un birrificio artigianale. Io sono 14 anni che faccio birra e sono stato il primo assunto dalla cooperativa. Per anni sono stato il secondo del Mastro birraio fino a che la cooperativa mi ha chiesto di diventare responsabile di produzione del birrificio, con un ausilio di personale esterno. Ho avuto così la possibilità di uscire nel 2016 in articolo 21 per cui facevo 3 giorni il birraio dentro e per tre giorni andavo a Grugliasco (To) a spillare birre e servire ai tavoli in una pizzeria pub, rientrando alle 2 di notte a Salluzzo. 
+<br> <br>
+Questa è stata la mia vita per tutto il 2016 fino a metà aprile del 2017 quando ho avuto l’udienza per la semilibertà. Nel frattempo ero entrato in contatto con il titolare del più grande birrificio ligure e sono stato assunto da loro. <span class="bold">Ad oggi sono responsabile di produzione del birrificio Maltus Faber che fa birra artigianale a Genova.</span>
+</p></span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Quindi tu hai ricevuto una formazione professionale in carcere?</h4><span class="corsivo">
+<p>
+    Io ho imparato un mestiere in carcere. Questo è fondamentale. Se vogliamo parlare di rieducazione, per usare un termine che a me non mi piace tanto, dobbiamo partire dalla consapevolezza che <span class="bold">la rieducazione non può prescindere dalla dignità dell’essere umano e non ci può essere dignità nell’essere umano se non c’è un ruolo sociale.</span> Il lavoro ti dà questo ruolo sociale. Voi state studiando per avere in futuro il vostro ruolo nella società. È ovvio che ad oggi sia un casino, è un problema per le persone incensurate trovar lavoro, quindi sicuramente formare e poi dare un lavoro ad un detenuto è complesso. Sta di fatto <span class="bold">che io sono l’esempio di quello che può fare il buon carcere, l’applicazione delle leggi</span>: noi abbiamo un ordinamento penitenziario molto valido in Italia, che viene studiato anche dall’estero. <span class="bold">Dagli anni ’80 con la legge Gozzini è stata introdotta la possibilità di modulare la pena nel corso dell’esecuzione in modo da favorire il processo rieducativo e di reinserimento</span>. Il problema nasce nella sua applicazione. Anzi in pochi casi viene applicata. Il Dottor Gozzini era uno dei Magistrati di Sorveglianza di Firenze ed era una persona illuminata. Voi avete una realtà carceraria non dico d’eccellenza ma ci s’avvicina.
+</p></span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Parli di Firenze?</h4><span class="corsivo">
+<p>
+    La Toscana come realtà carceraria è comunque superiore della media italiana. In altre regioni ci sono carceri che sono un casino, le misure alternative non vengono applicate, gli educatori non ci sono, c’è poco personale formativo rispetto al numero di detenuti. In Toscana si riesce a mantenere un po’ di equilibrio perché è sempre stata la culla degli illuminati e delle persone che credevano nel reinserimento sociale. Una delle cose che non si può dire è che esistono delle sedi di uffici di sorveglianza dove si va quando non si vuole concedere benefici: Cuneo, Alessandria sono realtà in cui i Magistrati di sorveglianza sono sempre stati molto stretti e restii a concedere benefici. La Toscana da sempre è territorio di benefici e concessioni. 
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Ma quindi ritieni che la Toscana sia sopra la media per la facilità con cui vengono concesse le misure alternative, oppure ti riferisci anche al livello generale delle condizioni delle carceri?</h4>
+<span class="corsivo">
+<p>
+    Sì più o meno tutte e due le cose. Sicuramente ci sono più concessioni di misure alternative, ma anche i detenuti sono più seguiti rispetto ad altri carceri in cui c’è una situazione terribile.  
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Attraverso i dati raccolti e altre testimonianze ci siamo fatti una idea molto diversa del carcere fiorentino. Ci hanno detto che c’è tanto sovraffollamento e dal punto di vista igienico-sanitario versa in condizioni pietose. È recente la notizia di una lettera scritta dai detenuti di Sollicciano nella quale denunciano una infestazione di cimici e topi che li attaccano durante la notte. </h4>
+<span class="corsivo"><p>
+    Queste cose per esempio a Marassi sono sempre successe. 
+Ti faccio questo esempio: io quando ho iniziato a usufruire del permesso premio ero in una zona protetta, creata per evitare che noi beneficiari del permesso finissimo in mezzo a casini o sommosse e ci venisse revocato. Questa zona era un minimo autogestita e vedevamo le guardie penitenziarie solo quando venivano ad aprire le celle la mattina e la sera. Dal 2016 vado in articolo 21 quindi dormo addirittura fuori dalle mura del carcere, stanza singola. Poi arriva la semilibertà: <span class="bold">in teoria da semilibero non si possono avere contatti con gli altri detenuti</span>. 
+<br> <br>
+Una mattina a Salluzzo mi danno un foglio e mi dicono di presentarmi al carcere di Marassi. Quindi prendo la mia macchina, parto in direzione Genova e dopo aver fatto tappa a casa mi faccio accompagnare dai miei famigliari a Marassi. Una volta arrivato entro dentro e faccio presente di essere un semilibero a tutti gli effetti, aspettandomi di essere mandato nella rispettiva sezione. <span class="bold">Loro invece mi rispondono che no, sarei dovuto salire in sezione normale</span>. <br> <br>
+Io non fumavo dal 2004 e mi sono ritrovato in una stanza con altre cinque persone che fumavano come turchi. <span class="bold">Tre brande a castello in una cella di 9/10 mq con questi che passavano tutto il giorno a cercare il subotex per drogarsi </span>(un antagonista del metadone). Chi vuole disintossicarsi prende una pastiglia e la ingoia, i tossici in crisi d’astinenza la spaccano e la tirano, diventando degli zombie che sbandano e barcollano. Io avevo il terrore di uscire dalla stanza e questa era la parte “tranquilla” del carcere. Sono stato 16 giorni in questa situazione in attesa che redigessero il programma di trattamento della semilibertà che mi avrebbe permesso di uscire.
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Ma perché secondo te c’è questa differenza abissale da carcere a carcere o addirittura fra qualità del trattamento che si può ricevere in un medesimo carcere? </h4>
+<span class="corsivo"><p>
+    Intanto bisogna distinguere fra due tipologie di strutture: ci sono le <span class="bold">case di reclusione</span>, come quella di Salluzzo, dove le persone di scontano delle condanne e sono strutturate in modo da far passare il tempo alle persone attraverso corsi di formazione professionale, attività come il teatro, iniziative che aiutino a indirizzare il detenuto verso un percorso. Poi ci sono le <span class="bold">case circondariali</span>, luoghi di passaggio dove c’è scambio quotidiano, la gente entra ed esce, quindi non c’è tanta cura delle persone. <span class="bold">In questi luoghi, è risaputo, conviene a tutti che le persone siano drogate, gonfie di sostanze e psicofarmaci, così sono tranquille e non fanno casino</span>. C’è stato un periodo a Marassi in cui se entrava un tossico di eroina il medico del Sert gli chiedeva se fuori prendeva metadone e in che quantità e gli prescriveva dosi ancora superiori. Ovviamente sapendo che le risposte del tossicodipendente erano delle bugie solo mirate a accaparrarsi sostanze. Gonfiare il tossico di metadone fa comodo, perché almeno non rompe le palle! <br>
+    La realtà è brutto da dire ma è questa qui. Le carceri è meglio che stiano tranquille. <span class="bold">È per questo che sono iniziate le rivolte quando durante il Covid hanno sospeso i colloqui, perché hanno tolto a queste persone l’unica valvola di sfogo che era la visita dei familiari</span>. 
+Poi la mia esperienza è limitata alla casa circondariale di Marassi e alla casa di detenzione di Salluzzo, ma vi posso assicurare che la differenza è enorme.
+<br><br>
+Inoltre, una delle cose più negative del sistema penitenziario italiano è che <span class="bold">si regge sul volontariato e sulla buona volontà di persone che entrano da fuori</span>. È stato un volontario che nel mio caso si è preso la briga di portare all’interno del carcere un medico che mi rinnovasse la patente. Grazie a lui io appena sono uscito ho potuto prendere la macchina e girare senza problemi. <span class="bold">È un problema italico quello di demandare al volontariato cose a cui dovrebbe pensare lo stato</span>, dando ad alcuni detenuti possibilità che altri non hanno solo grazie al fatto che privati cittadini decidono di mettersi a disposizione di una mandria di scappati di casa e dar loro una mano.
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Sebbene la tua esperienza dimostri che il carcere può funzionare, noi stiamo (forse erroneamente) considerando il tuo percorso come un’eccezione. Complice il fatto che in questi giorni abbiamo trovato un dato che parla da solo, ovvero che il 70% dei detenuti torna a commettere reato. Secondo te perché? </h4><span class="corsivo">
+Il dato va contestualizzato. <span class="bold">C’è una recidiva molto alta, è vero, ma tra chi esce a fine pena, ovvero coloro che si fanno la carcerazione dal primo all’ultimo giorno senza nessun tipo di beneficio</span>.<br>
+Ci sono per esempio persone che stanno tutto il giorno buttate su una branda. Il mio percorso positivo dipende dal fatto che io ho scelto, e mi sono dato da fare. C’è anche chi dice “ma a me chi me lo fa fare? Io sto scontando la mia pena in carcere, perché dovrei lavorare o studiare?” <span class="bold">In quest’ottica chi si fa la carcerazione dal primo all’ultimo giorno esce convinto di essere in credito con la società</span>. Quindi molti di questi escono senza avere né arte né parte, a volte senza affetti, senza un lavoro, senza soldi. La prima cosa che spesso fanno i detenuti appena escono è un’infrazione: prendere l’autobus senza biglietto perché non hanno soldi per comprarlo.  
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>
+   
+    Ma un ambiente più stimolante potrebbe arginare questi casi di detenzione controproducente?
+    </h4> <span class="corsivo">
+    <p>L’ambiente carcerario ha un impatto sulla condotta dei detenuti è vero, ma anche i detenuti condizionano l’ambiente carcerario. Per questo si diceva che <span class="bold">non sei tu che scegli Bollate, ma è Bollate che sceglie te</span>, riferendoci a questo carcere fiore all’occhiello degli istituti penitenziari italiani. Ma anche a livello di personale. <span class="bold">Un anno siamo andati lì a fare uno spettacolo teatrale e le guardie si rivolgevano a noi chiedendo le cose per favore</span>. Noi dopo lo spettacolo ci siamo ritrovati ad un piccolo rinfresco che era stato organizzato e gli agenti ci hanno detto: “Ragazzi è mezzanotte, che dite rientrate?” e per noi questo loro modo di comunicare era qualcosa di fuori dal mondo.<br><br>
+        Non a caso si parla di <span class="bold">subcultura carceraria, che non coinvolge soltanto i detenuti, perché il detenuto medio ha la mentalità criminale, da strada, tutto ciò che vogliamo. Ma anche la guardia media ha questi tratti</span>. I giovani oggi sono più preparati perché c’è più attenzione alla loro formazione, sono seguiti psicologicamente ecc. Una volta erano quelli con le chiavi in mano che aprivano e chiudevano, stop, non avevano ricevuto nessun tipo di nozione.<br><br>
+        <span class="bold">Sono rapporti tra persone, che talvolta diventano disfunzionali</span>. Non è giusto schematizzare, ci sono agenti che si comportano bene e altri che si comportano male, stessa cosa vale per i detenuti. E di nuovo, <span class="bold"> determinati carceri l’esasperazione è sempre al massimo da tutti e due gli schieramenti, perché i detenuti vivono una detenzione disumana e le guardie fanno turni fuori di testa</span>. Posti in cui manca la cura fondamentale. <br><br>
+        Quando nel 2003 a Marassi mi è arrivato il definitivo la minestra che ci davano la sera era acqua sporca con quattro pezzi di verdura che ci galleggiavano dentro e un po’ di riso. E magari ti davano una scatoletta di tonno. In questi casi se non hai due soldi per comprarti un pacco di pasta e un barattolo di pelati per farti una pasta non mangi. Dall’altra parte c’è l’agente che ha montato alle otto di mattina e alle otto di sera è sempre lì perché non c’è nessuno a dargli il cambio. Si crea un ambiente esplosivo.<br><br>
+        <span class="bold">Questo sistema così com’è non funziona, il carcere in Italia è fallimentare nella media. Laddove invece si applicano le leggi – che ci sono – e si dà alle persone un’opportunità trattamentale completa, questo assolve la sua funzione.</span> <br>
+        Io per esempio la prima volta che sono uscito sono stato fuori dodici ore. Dopo un altro mese altre dodici ore. Il mese dopo due giorni, in cui sono andato a Lastra a Signa a fare uno spettacolo. Era la prima volta che dormivo fuori dal carcere dopo tanti anni. Poi, dopo un po’ di tempo, ho ottenuto il primo permesso per andare a casa. Lentamente e gradualmente mi è stato concesso sempre un pochino di più, fino a quando è arrivato l’articolo 21.
+
+
+    </p></span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>L’articolo 21 permette di accedere alle misure alternative?</h4><span class="corsivo">
+<p>
+    Sì è il primo step dopo il permesso premio nelle misure alternative: dormi in carcere, hai orari molto serrati e nei giorni in cui non lavori devi tornare in carcere. Dopo di che c’è la semilibertà, che ti permette di stare fuori più di quanto il lavoro richieda e, infine, l’affidamento in prova ai servizi sociali, che è l’ultima fase prima della libertà. Io ne ho ancora per un annetto e mezzo, devo stare a casa dalle 10.30 di sera fino alle 6 del mattino e in questo lasso di tempo posso fare tutto, rimanendo all’interno della città metropolitana di Genova. Io poi son davvero un fortunato, via premiale posso stare fuori una volta al mese fino alle una di notte.
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Ma questa “fortuna” come la definisci tu, oltre ovviamente all’aver rispettato in maniera integerrima gli orari e le condizioni che ti sono state date, a cos’altro è dovuta? Hai avuto un buon avvocato o un magistrato incline a concedere misure alternative? </h4>
+<span class="corsivo"><p>
+    Essenzialmente è dovuta a come mi sono comportato. 
+Vi faccio un esempio. 
+<br>
+Daniele, un ragazzo che fa teatro con noi ed è in carcere a Salluzzo usciva in articolo 21, ma non lo volevano mandare a casa in permesso premio perché gli operatori lo avevano valutato “potenzialmente a rischio”, avendo lui avuto un passato di tossicodipendenza. Quindi era considerato in grado di lavorare sotto un regime più rigido, ma non ancora pronto per una misura più allentata. <br>
+Gli danno poi finalmente il primo permesso premio un mese fa.
+Io sapevo che Daniele si stava lamentando perché con la borsa lavoro non guadagnava molto, aveva il minimo indispensabile per vivere. Il mio progetto è quello di aprire un risto-pub nell’arco di due anni quindi dopo uno spettacolo teatrale, il giorno prima che uscisse in permesso gli ho detto “Dani non fare cazzate mi raccomando. Ho questo progetto, ti piacerebbe venire a lavorare con me a Genova?” e lui entusiasta mi ha risposto che con me ci sarebbe venuto a lavorare subito. 
+Il giorno dopo si è fatto, nonostante la prospettiva futura, nonostante avesse intorno persone come il datore di lavoro e il gruppo del teatro che avevano investito tanto su di lui.
+Fine delle misure alternative. 
+<br> <br>
+<span class="bold">Daniele ha fatto una scelta avendo le mie stesse possibilità</span>. Io da buddista praticante quale sono credo nel karma: ad ogni azione corrisponde una reazione.
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span>Ma lui faceva un percorso di disintossicazione e assistenza psicologica all’interno del carcere? Perché quando una persona è vittima di una tossicodipendenza è difficile parlare di scelta svincolata da ogni condizionamento. </h4>
+<span class="corsivo">
+<p>
+A me nel 2003 mi è arrivato il definitivo alle 17 del pomeriggio. Io l’ultima strisciata di cocaina me l’ero fatta alle 15. Sono entrato in carcere che ero un cocainomane. <span class="bold">Son scelte, purtroppo su questo io non transigo. Purtroppo ci vuole fortuna e essere seguiti, ma ci vuole anche tanta determinazione nello scegliere di dire no</span>. Perché quando mi capitavano persone che mi fa vedere due pallini di cocaina e mi dice di andare a tirarli io ho sempre detto no grazie. Non è che sono santo io, ma ho fatto una scelta.
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Il teatro ti ha aiutato in questo percorso? </h4>
+<span class="corsivo">
+<p>
+    Io quando mi facevo di cocaina ho sempre vissuto un senso di inadeguatezza nei confronti del mondo totale. La cocaina è fantastica perché tempo 5 centimetri ti senti superman. Illusoria, perché dopo poco tu torni ad essere la stessa merda che eri prima.<br>
+    Io mi metto a fare teatro 15 anni fa perché un ragazzo che era in sezione con me mi dice “dai vieni a teatro, ci serve qualcuno e secondo me ti fa bene” e anche la psicologa era d’accordo. A me terrorizzava questa cosa. Il primo giorno di laboratorio teatrale conosco anche un gruppo di ragazzi esterni che erano il primo gruppo storico di “Voci erranti” la compagnia di cui faccio parte oggi. 
+Ad un certo punto facciamo un gioco che era basta su tra comandi: acqua, fuoco, tempesta. Se chiamavano acqua tu dovevi fare qualcosa che ricordasse l’acqua, la tempesta dovevi ripararti, fuoco dovevi simulare una fiamma. Il movimento del corpo doveva tentare di rispecchiare anche l’intonazione e la velocità con cui veniva dato il comando. <span class="bold">Finché era acqua e tempesta io ci provavo, ma quando si trattava di fare il fuoco intorno a me vedevo dei bracieri ardere, mentre io mi sentivo un cerino</span>. L’insegnate, una donna straordinaria, all’epoca aveva 40 anni e stava in mezzo a venti uomini condannati per svariati reati e ci diceva “pensate di avere le palle? pensate di essere degli uomini? fatemi vedere che uomini siete!”
+<br><br>
+Non pensava assolutamente al lato criminale, ma <span class="bold">voleva vedere la nostra verità, le nostre debolezze, chi eravamo veramente</span>. Mi veniva nell’orecchio e con una delicatezza perentoria mi diceva di smettere di fari le seghe mentali. <br>
+La realtà dei fatti è che io oggi il fuoco di quell’esercizio lo faccio sempre allo stesso modo. L’unica cosa che è cambiata è il mio modo di guardarmi, di accettarmi. Me ne batto le palle se è un cerino, pazienza. Questo è il mio fuoco. Ho imparato ad accettarmi come sono, con i miei limiti. 
+Poi in questi anni ho avuto uno psicologo che mi ha fatto un mazzo così dandomi veramente una grossa mano, ma <span class="bold">il teatro mi ha cambiato la vita, mi ha permesso di accettarmi essendo me stesso, mi ha insegnato a vivermi nel contesto del mondo per quello che sono</span>. Ho anche imparato un po’ a giocarci con questo.
+<br><br>
+<span class="bold">Laddove ci sono attività di questo genere ci può essere rieducazione, laddove si insegna alle persone ad avere un ruolo, un lavoro, una dimensione umana, un rispetto per sé stesso ci può essere rieducazione</span>. Perché se non imparo che può essere molto dignitoso farsi il mazzo anche dieci ore al giorno e prendere 5-600 euro al mese che però sono importanti perché me li sono guadagnati. Il Mastro birraio che mi ha insegnato il mestiere mi dice che io devo lavorare con attenzione, ma non perché sia importante fare birra buona, ma perché quando a fine giornata ripensi a quello che dovevi fare e sei soddisfatto perché l’hai fatto in maniera corretta stai facendo qualcosa di rivoluzionario per te stesso. E mentre lui mi diceva queste cose ho ripensato a tutte le volte che facendo quello che non dovevo fare o non facendo quello che avrei dovuto fare bene mi trovavo la notte a non dormire per i sensi di colpa. E lì mi sono aperto a queste persone che mi stavano dando una nuova possibilità di vita. Poi ho avuto la fortuna che in tutto questo accidente mi salti fuori anche la birra buona!
+</p>
+</span>
+<h4 class="domande"><span class="cont_icona_domanda"><i class="fa fa-comments" aria-hidden="true"></i></span> Noi abbiamo parlato di rieducazione, ma all’inizio ci hai detto che questa parola non ti piace particolarmente. Perché?</h4>
+<span class="corsivo">
+<p class="last_p">
+    Non perché presuppongano che siamo dei mostri da rimanipolare, non lo considero un termine denigratorio nei confronti del detenuto. <span class="bold">Lo trovo un termine profondamente inadeguato per il concetto che l’istituzione pretende di dare alla parola rieducazione. Non è l’istituzione che rieduca, ma è l’individuo che sceglie di rieducarsi</span>. L’istituzione dovrebbe impegnarsi a dare gli strumenti di rieducazione, strumenti che siano utili a guardarsi dentro, a crescere. Non sono le imposizioni tout court che ti rieducano, anzi sono controproducenti, soprattutto se vieni costretto in determinati vincoli in maniera pressoché immotivata. <br>
+    È ovvio che è difficile soprattutto se si ha a che fare con adulti dai venti anni in su, che hanno sempre vissuto di espedienti, hanno sempre fatto casini e non hanno nulla da spendere nel mondo è molto difficile insegnare loro che si può vivere in maniera diversa. Però senza questo non si può fare altro. <br>
+    <span class="bold">E non è la legge perché ripeto, è buona. È l’approccio che si ha alla legge e alla sua applicazione</span>. <br><br>
+    Mi sono ritrovato a discutere con una compagna buddista l’altra sera commentando la sentenza dei due fratelli Bianchi che hanno ammazzato di botte quel povero ragazzo. Lei ha detto “le chiavi solo per aprirle le porte del carcere” nonostante lei sappia benissimo chi sono ed il mio vissuto. 
+Quando vedi il male e lo riconosci lo tieni distante, come nella tragedia greca. Il carcere diventa il contenitore del male, che va allontanato.
+<br><br>
+Ecco, <span class="bold">bisognerebbe invece essere vicini a tutti quanti perché questa è una tragedia. Bisognerebbe che queste persone attraverso un percorso in carcere capissero l’enorme disgrazia di cui si sono resi artefici. Se non riesci a passare attraverso il perdono di te stesso non puoi vivere perché non riesci a relazionarti con l’altro mettendoti a nudo</span>.
+Quando ho raccontato di me al figlio della mia compagna lui mi ha detto: “in fin dei conti questo è quello che dovrebbe fare il carcere no? Prendere una persona che ha fatto un errore e restituirla alla società come sei tu adesso”. 
+
+</p></span>
+
+        </div>
+    </div>
+        <div class="strisciata_right" >
+          
+        </div> 
+        </section>
+        <div id="footer">
+            <p id = footertesto>Un progetto di Data Journalism per l'Università di Pisa.<br> Laurea Magistrale in Informatica Umanistica.<br>Anno Accademico 21/22<br><br>Alessandro Arena<br> Alice Bergonzini <br> Caterina Frosali
+            </p>
+        </div>
+    </body>
+    <script type="text/javascript" src="dj.js"></script>
+    </html>

@@ -1,0 +1,611 @@
+html {
+	
+	margin: 0px;
+}
+
+body{
+	margin: 0px;
+	font-family: 'Merriweather', serif;
+    font-size: 18px;
+	scroll-behavior: smooth;
+	background-color: #FFFCF2;
+
+}
+
+
+
+
+/* Sezione intro */ 
+
+h1 {
+	display: block;
+	font-size: 100px;
+	margin-top: 0px;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: 900;
+  }
+
+#titolo h2 {
+	font-weight: 200;
+	font-size: 55px;
+}
+
+
+
+  #sezione_intro{
+	min-height: 100vh;
+	background-color: #EB5E28;
+	margin: 0px;
+}
+
+#dheader {
+	margin: auto;
+ 	width: 50%;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	
+}
+
+#contieni_logo {
+	margin-right: 40px;
+	margin-top: 20px;
+
+	}
+
+.fa-solid{
+	color: white;
+
+}
+
+#contieni_icona a {
+	position: absolute;
+	left: 50%;
+	color: white;
+	bottom: 30px;
+}
+
+
+#contieni_icona {
+	font-size: 50px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); }
+
+
+
+#contenuto{
+    display:flex;
+}
+
+/* Struttura base del sito */
+
+.strisciata_right {
+	width: 20%;
+	height: auto;
+	position: relative;
+    margin-left: 40px;
+	margin-top: 20px;
+	margin-right: 40px;
+	padding: 0;
+	border-left: 1px solid grey;
+}
+
+.center{
+    width: 60%;
+}
+
+
+.strisciata_left{
+	width: 20%;
+	height: auto;
+	position: relative;
+    margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	border-right: 1px solid grey;
+}
+
+
+/* sezioni interne */
+
+.sezione_interna{ 
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 60px;
+}
+
+.titoletti{ 
+    margin-bottom: 40px;
+	margin-top: 40px;
+	font-size: 30px;
+}
+
+.sottoparagrafi{ 
+	margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sottoparagrafi a {
+	color: black;
+}
+
+#intro_st {
+	margin-bottom: 0px;
+}
+
+.testi{
+    line-height: 23px;
+	margin-bottom: 50px;
+}
+
+/* sezione profilo */
+
+#donna {
+	position: relative;
+	display: flex;
+	margin-top: 0px;
+    margin-bottom: 60px;
+	justify-content: center;
+}
+
+#didascalie_donne{
+text-align: center;
+font-size:20px;
+font-weight: bolder;
+}
+
+.didascalie{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 50px;
+    margin-top: -45px;
+    font-weight: bolder;
+}
+
+
+
+#didascalia_istruzione{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 50px;
+    margin-top: -25px;
+    font-weight: bolder;
+}
+
+.didascaliecrimini{
+	text-align: center;
+    font-size: 12px;
+    margin-bottom: 50px;
+    margin-top: -30px;
+    font-weight: bolder;
+}
+
+.grafico{
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
+    margin-bottom: 40px;
+	overflow: visible;
+}
+
+svg {
+	overflow: visible;
+}
+
+.grafico_flex{
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+
+#pie_stranieri {
+	margin-bottom: 90px;
+}
+
+
+.sondaggio_titolo {
+	width: 100%;
+	color: white;
+	background-color: #EB5E28;
+	text-align: left;
+	display: flex;
+	
+}
+
+.sondaggio_titolo i {
+	margin-left: 15px;
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+
+.sondaggio_titolo p {
+	margin-top:10px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	font-weight: bolder;
+}
+
+.sondaggio {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	box-shadow: 2px 2px 6px grey;
+	text-align: center;
+	padding-bottom: 10px;
+
+}
+/* sezione mappa*/
+
+#map { 
+    display: flex;
+    justify-content: center;
+	height: 660px;
+	width: 600px;
+    border: 3px solid;
+    border-color: grey;
+    
+
+ }
+
+ 
+
+ .NomeIstituto {
+	font-weight: bold;
+ }
+
+ .posti_occupatiRED {
+	color: red;
+ }
+
+ .posti_occupatiGREEN {
+	color: green;
+ }
+
+ .marker-cluster-small {
+	background-color: rgba(109, 113, 141, 0.8);
+	}
+	.marker-cluster-small div {
+	background-color:rgba(109, 113, 141, 0.8);
+	}
+	.marker-cluster-medium {
+	background-color:rgba(109, 113, 141, 0.8);
+	}
+	.marker-cluster-medium div {
+	background-color: rgba(109, 113, 141, 0.8);
+	}
+	
+	.marker-cluster-large {
+	background-color: rgba(109, 113, 141, 0.8);
+	}
+	.marker-cluster-large div {
+	background-color:rgba(109, 113, 141, 0.8);
+	}
+
+	.marker-cluster{
+		color: white;
+
+	}
+
+#legenda_mappa {
+	margin-left: 20px;
+}
+
+
+.bars_eta:hover {
+	stroke: black;
+	stroke-width: 1.5;
+}
+
+.bubble_circles:hover {
+	stroke: black;
+	stroke-width: 1.5;
+}
+
+.bars_crimini:hover {
+	stroke: black;
+	stroke-width: 1.5;
+}
+
+.bars_titolo:hover {
+	stroke: black;
+	stroke-width: 1.5;
+}
+
+.bars_laureati:hover {
+	stroke: black;
+	stroke-width: 1.5;
+}
+
+#bubble_stranieri {
+	margin-top: 10px;	
+}
+
+
+#bubble_stranieri text {
+	pointer-events: none;
+}
+
+.bbl_bold{
+	font-weight: bold;
+}
+
+.tooltip {
+	opacity: 0;
+	
+}
+
+.numerone {
+
+	font-size: 30px;
+	font-weight: 900;
+}
+
+#numeroni_svrf {
+
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+
+
+.contieni_num {
+	width: 20%;
+	padding: 30px;
+}
+
+.ev {
+	color: #EB5E28;
+	font-weight: bolder;
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.corsivo {
+    font-style: oblique;
+}
+
+.domande{
+	font-size: 20px;
+	font-weight: 900;
+}
+
+
+.contieni_punti {
+	font-size: 15px;
+	margin-top: 40px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	margin-bottom: 40px;
+	text-align: center;
+	display: flex;
+	
+}
+
+.punto {
+	margin-right: 20px;
+	width: 300px;
+	padding: 30px;
+    box-shadow: 2px 2px 6px grey;
+	border-radius: 15px;
+}
+
+.contieni_img {
+	margin-bottom: 10px;
+}
+
+#contieni_punti2 {
+	width: 100%;
+
+
+}
+
+.annotation {
+	height: 30px;
+	position: relative;
+
+}
+
+#Università{
+    display: flex; 
+}
+
+
+.titoligrassetti{
+    font-weight: bolder;
+}
+
+.cont_icona_domanda {
+	margin-right: 15px;
+}
+
+.last_p {
+	margin-bottom: 100px;
+}
+
+.inizio_intervista {
+	display: flex;
+	font-size: 30px;
+}
+
+
+.disclaimer {
+	margin-top: 2px;
+	margin-bottom: 40px;
+	color: #403d39;
+	font-size: 13px;
+}
+
+#Introduzione .titoletti {
+	margin-bottom: 5px;
+}
+
+#fonti p{
+	font-size: 13px;
+	
+}
+
+#fonti a{
+	color: #403d39;
+	font-weight: 700;
+}
+
+#fonti {
+	margin-bottom: 140px;
+}
+
+/* nav intervista */
+
+.nav_intervista {
+	display: flex;
+	height: 10vh;
+	width: 100%;
+	background-color: #EB5E28;
+	color: white;
+}
+
+#titolo_nav {
+	display: flex;
+	margin-left: 30px;
+}
+
+#titolo_nav a {
+	text-decoration: none;
+	color: white;
+}
+/* footer */
+
+#footer {
+	background-color: #403D39;
+	width: 100%;
+	height: 30vh;
+	text-align: center;
+	color: #FFFCF2;
+	border-top: 2px solid #EB5E28;
+}
+
+#footertesto{
+  position: relative;
+  top: 15%;
+  line-height: 25px;
+  font-size:14px;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 2559px) {
+	h1 {
+		font-size: 55px;
+		font-weight: 900;
+	  }
+	
+	#titolo h2 {
+		font-weight: 200;
+		font-size: 40px;
+	}
+  }
+
+
+@media only screen and (max-width: 1919px) {
+	h1 {
+		font-size: 45px;
+		font-weight: 900;
+	  }
+	
+	#titolo h2 {
+		font-weight: 200;
+		font-size: 30px;
+	}
+
+	#footer {
+		height: 40vh;
+	}
+  }
+
+
+  @media only screen and (max-width: 1080px) {
+	h1 {
+		font-size: 30px;
+		font-weight: 900;
+	  }
+	
+	#titolo h2 {
+		font-weight: 200;
+		font-size: 20px;
+	}
+
+	
+	.strisciata_left {
+		width: 0;
+		margin: 10px;
+	border: none;
+
+	}
+
+	
+	.strisciata_right {
+		width: 0;
+		margin: 10px;
+		border:none;
+	}
+
+	.center {
+		width: 90%;
+		
+	}
+
+
+	.contieni_punti {
+		font-size: 13px;
+		
+		flex: 50%;
+	}
+
+  }
+
+
+
+
+
+
+
+  @media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 30px;
+		font-weight: 900;
+	  }
+	
+	#titolo h2 {
+		font-weight: 200;
+		font-size: 20px;
+	}
+
+	.strisciata_left {
+		width: 1%;
+	}
+
+	.strisciata_right {
+		width: 1%;
+	}
+
+	.contieni_punti{
+		font-size: 13px;
+	}
+
+  }
+
+
