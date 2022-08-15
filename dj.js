@@ -574,7 +574,7 @@ for (i=0; i < 190; i++) {
       circleOptions.color = "red";
     }
     marker = L.circle([mydata[i].Latitudine, mydata[i].Longitudine],circleOptions)
-        .bindPopup("<span class='NomeIstituto'>" + mydata[i].Istituto + "</span></br><span class='NomeCitta'>Citta': " + mydata[i].Citta + "</span>" + "</br><span class='capienza_regolamentare'> Capienza Regolamentare: " + mydata[i].capienza_regolamentare + "</span></br><span class='"+ nomeClasse +"'>Capienza effettiva: " + mydata[i].posti_occupati + "</span>");
+        .bindPopup("<span class='NomeIstituto'>" + mydata[i].Istituto + "</span></br><span class='NomeCitta'>Citta': " + mydata[i].Citta + "</span>" + "</br><span class='capienza_regolamentare'> Capienza Regolamentare: " + mydata[i].capienza_regolamentare + "</span></br><span class='"+ nomeClasse +"'>Detenuti presenti: " + mydata[i].posti_occupati + "</span>");
     markers.addLayer(marker);
 }   
 map.addLayer(markers);
